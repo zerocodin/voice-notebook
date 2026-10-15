@@ -140,4 +140,5 @@ noteSchema.methods.canBeEditedBy = function (userId) {
   return false;
 };
 
-module.exports = mongoose.model("note", noteSchema);
+const Note = mongoose.model("note", noteSchema);
+module.exports = {Note}

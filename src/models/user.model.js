@@ -114,5 +114,5 @@ userSchema.methods.toPublicJSON = function () {
     createdAt: this.createdAt,
   };
 };
-
-module.exports = mongoose.model("user", userSchema);
+const User = mongoose.model("user", userSchema);
+module.exports = {User}

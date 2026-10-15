@@ -52,4 +52,5 @@ friendshipSchema.pre("validate", function (next) {
   next();
 });
 
-module.exports = mongoose.model("friendship", friendshipSchema);
+const Friendship = mongoose.model("friendship", friendshipSchema);
+module.exports = {Friendship}
