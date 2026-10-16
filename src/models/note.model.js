@@ -46,7 +46,7 @@ const noteSchema = new mongoose.Schema(
 			default: "",
 			maxlength: 100000, // ~100k chars per note
 		},
-		language: {
+		lang: {
 			type: String,
 			enum: LANGUAGE_CODES,
 			default: "en-US",
