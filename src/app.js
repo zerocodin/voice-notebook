@@ -44,23 +44,6 @@ app.use(
 app.get("/", (req, res) => res.json({ ok: true, msg: "Voice Notes API" }));
 
 // auth routes
-app.use(
-	"/api/auth/login",
-	rateLimit({
-		windowMs: 3 * 60 * 1000,
-		max: 5,
-		message: "Too many request, try again",
-	}),
-);
-
-app.use(
-	"/api/auth/register",
-	rateLimit({
-		windowMs: 5 * 60 * 1000,
-		max: 5,
-		message: "Too many request, try again",
-	}),
-);
 app.use("/api/auth", authRoutes);
 
 // user routes
