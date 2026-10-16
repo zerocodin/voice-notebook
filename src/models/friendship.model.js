@@ -45,11 +45,10 @@ friendshipSchema.index({ requester: 1, status: 1 });
 friendshipSchema.index({ recipient: 1, status: 1 });
 
 // Guard: user cannot befriend themselves
-friendshipSchema.pre("validate", function (next) {
+friendshipSchema.pre("validate", function () {
   if (this.requester.toString() === this.recipient.toString()) {
     return next(new Error("Cannot create a friendship with yourself"));
   }
-  next();
 });
 
 const Friendship = mongoose.model("friendship", friendshipSchema);
